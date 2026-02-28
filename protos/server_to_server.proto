@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package registry_service;
+
+service RegistryService {
+    rpc discovery(RecordRequest) returns (QueryReply);
+    rpc heartBeat(RenewRequest) returns (QueryReply);
+}
+
+message Empty {}
+
+message RecordRequest {
+    int32 serverId = 1;
+    string serverIp = 2;
+    int32 serverPort = 3;
+    bool overloaded = 4;
+    string service = 5;
+}
+
+message RenewRequest {
+    int32 serverId = 1;
+    bool overloaded = 2;
+}
+
+message QueryReply {
+    bool success = 1;
+}

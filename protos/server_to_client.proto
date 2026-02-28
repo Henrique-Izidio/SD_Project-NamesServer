@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package discovery_service;
+
+service DiscoveryService {
+    rpc findServer(QueryRequest) returns (QueryReply);
+    rpc warnServerError(ServerError) returns (QueryReply);
+}
+
+message Empty {}
+
+message QueryRequest {
+    string service = 1;
+}
+
+message ServerError {
+    int32 serverId = 1;
+}
+
+message QueryReply {
+    int32 serverId = 1;
+    string serverIp = 2;
+    int32 serverPort = 3;
+    bool querySuccess = 4;
+}
