@@ -1,4 +1,4 @@
-Service Registry & Discovery - Sistema de Bazar
+## Service Registry & Discovery - Sistema de Bazar
 
 Este repositório contém a implementação do **Servidor de Nomes** para o projeto final da disciplina de **Sistemas Distribuídos**.
 
